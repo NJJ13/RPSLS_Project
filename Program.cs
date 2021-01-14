@@ -10,6 +10,9 @@ namespace RPSLS_project
     {
         static void Main(string[] args)
         {
+            Game RPSLS = new Game();
+            RPSLS.DisplayRules();
+            Console.ReadLine();
         }
     }
 }
