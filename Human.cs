@@ -25,7 +25,8 @@ namespace RPSLS_project
                 selection = Console.ReadLine();
             }
             int gestureInt = int.Parse(selection);
-            return gestureInt;
+            int P1GS = (gestureInt -= 1);
+            return P1GS;
             
         }
     }

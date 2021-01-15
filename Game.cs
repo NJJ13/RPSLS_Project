@@ -12,6 +12,8 @@ namespace RPSLS_project
         Player playerTwo;
         int playerOneScore;
         int playerTwoScore;
+        int P1S;
+        int P2S;
 
         public Game()
         {
@@ -27,17 +29,23 @@ namespace RPSLS_project
             if (playerSelection == "0")
             {
                 playerOne = new CPU();
+                playerOne.playerName = "P1";
                 playerTwo = new CPU();
+                playerOne.playerName = "P2";
             }
             else if (playerSelection == "1")
             {
                 playerOne = new Human();
+                playerOne.playerName = "P1";
                 playerTwo = new CPU();
+                playerOne.playerName = "P2";
             }
             else if (playerSelection == "2")
             {
                 playerOne = new Human();
+                playerOne.playerName = "P1";
                 playerTwo = new Human();
+                playerOne.playerName = "P2";
             }
         }
         public void DisplayRules()
@@ -61,9 +69,55 @@ namespace RPSLS_project
                 Console.WriteLine("Spock vaporizes Rock.");
             }
                 
+        }
+        public void ThrowGesture()
+        {
+            P1S = playerOne.GestureSelection();
+            P2S = playerTwo.GestureSelection();
 
+            Console.WriteLine(playerOne.playerName + "picked " + playerOne.gestureArray[P1S].Name + "and " + playerTwo.playerName + "picked " + playerTwo.gestureArray[P2S].Name + ".");
 
+        }
+        public void Compare(int P1S, int P2S)
+        {
+            if (playerOne.gestureArray[P1S].beats.Contains(playerTwo.gestureArray[P2S].Name))
+            {
+                Console.WriteLine(playerOne.gestureArray[P1S].Name + "beats " + playerTwo.gestureArray[P2S]);
+                playerOneScore += 1;
+            }
+            else if (playerTwo.gestureArray[P2S].beats.Contains(playerOne.gestureArray[P1S].Name))
+            {
+                Console.WriteLine(playerOne.gestureArray[P2S].Name + "beats " + playerTwo.gestureArray[P1S]);
+                playerTwoScore += 1;
+            }
+            else
+            {
+                Console.WriteLine("It's a tie!");
+            }
+        }
+        public void DisplayWinner()
+        {
+            if(playerOneScore == 2)
+            {
+                Console.WriteLine(playerOne.playerName + "has won the game!");
+            }
+            else if(playerTwoScore == 2)
+            {
+                Console.WriteLine(playerTwo.playerName + "has won the game!");
+            }
+        }
+        public void RunGame()
+        {
+            DisplayRules();
 
+            while(playerOneScore < 2 && playerTwoScore < 2)
+            {
+                ThrowGesture();
+                Compare(P1S, P2S);
+            }
+
+            DisplayWinner();
+                       
         }
     }
 }

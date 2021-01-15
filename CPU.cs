@@ -10,9 +10,17 @@ namespace RPSLS_project
     {
         public Random random;
 
+        public CPU()
+        {
+            random = new Random();
+        }
+        
+
         public override int GestureSelection()
         {
-           return random.Next(gestureArray.Length);
+            int CPUselector = random.Next(gestureArray.Length);
+            int CPUGS = (CPUselector -= 1);
+            return CPUGS;
         }
     }
 }

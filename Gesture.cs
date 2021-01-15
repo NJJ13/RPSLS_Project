@@ -9,8 +9,6 @@ namespace RPSLS_project
     public abstract class Gesture
     {
         public string Name;
-        public List<Gesture> beats;
-
-
+        public List<string> beats;
     }
 }

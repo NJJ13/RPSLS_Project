@@ -9,15 +9,22 @@ namespace RPSLS_project
     public abstract class Player
     {
         public List<Gesture> selection;
-        public Gesture rock = new Rock();
-        public Gesture paper = new Paper();
-        public Gesture scissors = new Scissor();
-        public Gesture lizard = new Lizard();
-        public Gesture spock = new Spock();
+        public Rock rock = new Rock();
+        public Paper paper = new Paper();
+        public Scissor scissors = new Scissor();
+        public Lizard lizard = new Lizard();
+        public Spock spock = new Spock();
         public Gesture[] gestureArray = new Gesture[5];
+        public string playerName;
 
         public Player()
         {
+            rock = new Rock();
+            paper = new Paper();
+            scissors = new Scissor();
+            lizard = new Lizard();
+            spock = new Spock();
+            playerName = null;
             selection = new List<Gesture>();
             selection.Add(rock);
             selection.Add(paper);
