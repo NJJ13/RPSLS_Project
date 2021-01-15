@@ -8,5 +8,8 @@ namespace RPSLS_project
 {
     class Gesture
     {
+        public string Name;
+
+
     }
 }
