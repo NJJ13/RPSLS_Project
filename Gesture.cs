@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace RPSLS_project
 {
-    class Gesture
+    public abstract class Gesture
     {
         public string Name;
+        public List<Gesture> beats;
 
 
     }

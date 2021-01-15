@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPSLS_project
 {
-    class Rock : Gesture
+    public class Rock : Gesture
     {
-        List<Gesture> beats;
-
-        public Rock(string name)
+        
+        public Rock()
         {
-            Name = name;
+            Name = "Rock";
             beats = new List<Gesture>();
+            beats.Add(Scissor);
+
             
-            beats.Add();
+            
         }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace RPSLS_project
 {
-    class Spock : Gesture
+    public class Spock : Gesture
     {
+        public Spock()
+        {
+            Name = "Spock";
+            beats = new List<Gesture>();
+        }
     }
 }
