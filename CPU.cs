@@ -18,8 +18,7 @@ namespace RPSLS_project
 
         public override int GestureSelection()
         {
-            int CPUselector = random.Next(gestureArray.Length);
-            int CPUGS = (CPUselector -= 1);
+            int CPUGS = random.Next(4);
             return CPUGS;
         }
     }

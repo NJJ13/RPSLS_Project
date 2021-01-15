@@ -31,21 +31,21 @@ namespace RPSLS_project
                 playerOne = new CPU();
                 playerOne.playerName = "P1";
                 playerTwo = new CPU();
-                playerOne.playerName = "P2";
+                playerTwo.playerName = "P2";
             }
             else if (playerSelection == "1")
             {
                 playerOne = new Human();
                 playerOne.playerName = "P1";
                 playerTwo = new CPU();
-                playerOne.playerName = "P2";
+                playerTwo.playerName = "P2";
             }
             else if (playerSelection == "2")
             {
                 playerOne = new Human();
                 playerOne.playerName = "P1";
                 playerTwo = new Human();
-                playerOne.playerName = "P2";
+                playerTwo.playerName = "P2";
             }
         }
         public void DisplayRules()
@@ -53,7 +53,7 @@ namespace RPSLS_project
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
             Console.WriteLine("Each player will select an object. The player with the strongest object will win the round.");
             Console.WriteLine("The best of 3 rounds will win the game!");
-            Console.WriteLine("Press 1 for the object's details");
+            Console.WriteLine("Press 1 for the hierarchy details");
             string detailedRules = Console.ReadLine();
             if (detailedRules == "1")
             {
@@ -75,19 +75,21 @@ namespace RPSLS_project
             P1S = playerOne.GestureSelection();
             P2S = playerTwo.GestureSelection();
 
-            Console.WriteLine(playerOne.playerName + "picked " + playerOne.gestureArray[P1S].Name + "and " + playerTwo.playerName + "picked " + playerTwo.gestureArray[P2S].Name + ".");
+            Console.WriteLine(playerOne.playerName + " picked " + playerOne.gestureArray[P1S].Name + " and " + playerTwo.playerName + " picked " + playerTwo.gestureArray[P2S].Name + ".");
 
         }
         public void Compare(int P1S, int P2S)
         {
             if (playerOne.gestureArray[P1S].beats.Contains(playerTwo.gestureArray[P2S].Name))
             {
-                Console.WriteLine(playerOne.gestureArray[P1S].Name + "beats " + playerTwo.gestureArray[P2S]);
+                Console.WriteLine(playerOne.gestureArray[P1S].Name + " beats " + playerTwo.gestureArray[P2S].Name + ".");
+                Console.WriteLine(playerOne.playerName + " won the round.");
                 playerOneScore += 1;
             }
             else if (playerTwo.gestureArray[P2S].beats.Contains(playerOne.gestureArray[P1S].Name))
             {
                 Console.WriteLine(playerOne.gestureArray[P2S].Name + "beats " + playerTwo.gestureArray[P1S]);
+                Console.WriteLine(playerTwo.playerName + " won the round.");
                 playerTwoScore += 1;
             }
             else

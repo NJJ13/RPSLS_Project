@@ -13,14 +13,12 @@ namespace RPSLS_project
             string selection = null;
             while (selection != "1" && selection != "2" && selection != "3" && selection != "4" && selection != "5")
             {
-                Console.WriteLine("Choose an object to throw (select a number):");
+                int i = 1;
+                Console.WriteLine(playerName + " choose an object to throw (select a number):");
                 foreach (Gesture name in gestureArray)
                 {
-                    for (int i = 1; i < 6; i++)
-                    {
-                        Console.WriteLine(i + name.Name);
-                    }
-                    
+                    Console.WriteLine(i + " " + name.Name);
+                    i++;
                 }
                 selection = Console.ReadLine();
             }
