@@ -19,18 +19,24 @@ namespace RPSLS_project
             do
             {
                 Console.WriteLine("How many Players?");
-                Console.WriteLine("Single Player = 1 or Multiplayer = 2");
+                Console.WriteLine("Demo = 0 Single Player = 1 or Multiplayer = 2");
                 playerSelection = Console.ReadLine();
 
-            } while (playerSelection != "1" && playerSelection != "2");
-            
-            playerOne = new Human();
-            if (playerSelection == "1")
+            } while (playerSelection != "0" && playerSelection != "1" && playerSelection != "2");
+
+            if (playerSelection == "0")
             {
+                playerOne = new CPU();
+                playerTwo = new CPU();
+            }
+            else if (playerSelection == "1")
+            {
+                playerOne = new Human();
                 playerTwo = new CPU();
             }
             else if (playerSelection == "2")
             {
+                playerOne = new Human();
                 playerTwo = new Human();
             }
         }

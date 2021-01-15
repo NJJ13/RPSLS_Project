@@ -8,5 +8,11 @@ namespace RPSLS_project
 {
     class CPU : Player
     {
+        public Random random;
+
+        public int CPUSelect()
+        {
+           return random.Next(gestureArray.Length);
+        }
     }
 }

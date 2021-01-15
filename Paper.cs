@@ -12,6 +12,7 @@ namespace RPSLS_project
         {
             Name = "Paper";
             beats = new List<Gesture>();
+            
         }
     }
 }
