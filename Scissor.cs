@@ -8,10 +8,15 @@ namespace RPSLS_project
 {
     public class Scissor : Gesture
     {
+        public Gesture lizard = new Lizard();
+        public Gesture paper = new Paper();
         public Scissor()
         {
             Name = "Scissors";
             beats = new List<Gesture>();
+            beats.Add(lizard);
+            beats.Add(paper);
         }
+        
     }
 }
