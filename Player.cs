@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS_project
 {
-    public class Player
+    public abstract class Player
     {
         public List<Gesture> selection;
         public Gesture rock = new Rock();
@@ -31,6 +31,8 @@ namespace RPSLS_project
             gestureArray[4] = spock;
 
         }
+
+        public abstract int GestureSelection();
                    
     }
 }

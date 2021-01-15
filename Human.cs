@@ -8,7 +8,7 @@ namespace RPSLS_project
 {
     class Human : Player
     {
-        public int SelectGesture()
+        public override int GestureSelection()
         {
             string selection = null;
             while (selection != "1" && selection != "2" && selection != "3" && selection != "4" && selection != "5")
