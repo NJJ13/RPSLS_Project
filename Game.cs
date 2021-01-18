@@ -10,8 +10,8 @@ namespace RPSLS_project
     {
         Player playerOne;
         Player playerTwo;
-        int playerOneScore;
-        int playerTwoScore;
+        int playerOneScore = 0;
+        int playerTwoScore = 0;
         int P1S;
         int P2S;
 
@@ -99,7 +99,6 @@ namespace RPSLS_project
             {
                 Console.WriteLine("It's a tie!");
             }
-            Console.ReadLine();
         }
         public void DisplayWinner()
         {

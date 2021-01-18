@@ -10,10 +10,12 @@ namespace RPSLS_project
     {
         public Lizard()
         {
+          
             Name = "Lizard";
             beats = new List<string>();
             beats.Add("Spock");
             beats.Add("Paper");
+            
         }
     }
 }
