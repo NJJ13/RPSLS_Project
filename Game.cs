@@ -53,7 +53,7 @@ namespace RPSLS_project
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
             Console.WriteLine("Each player will select an object. The player with the strongest object will win the round.");
             Console.WriteLine("The best of 3 rounds will win the game!");
-            Console.WriteLine("Press 1 for the hierarchy details");
+            Console.WriteLine("Press 1 for the hierarchy details, or press any other key to start.");
             string detailedRules = Console.ReadLine();
             if (detailedRules == "1")
             {
@@ -75,20 +75,20 @@ namespace RPSLS_project
             P1S = playerOne.GestureSelection();
             P2S = playerTwo.GestureSelection();
 
-            Console.WriteLine(playerOne.playerName + " picked " + playerOne.gestureArray[P1S].Name + " and " + playerTwo.playerName + " picked " + playerTwo.gestureArray[P2S].Name + ".");
+            Console.WriteLine(playerOne.playerName + " picked " + playerOne.selection[P1S].Name + " and " + playerTwo.playerName + " picked " + playerTwo.selection[P2S].Name + ".");
 
         }
         public void Compare(int P1S, int P2S)
         {
-            if (playerOne.gestureArray[P1S].beats.Contains(playerTwo.gestureArray[P2S].Name))
+            if (playerOne.selection[P1S].beats.Contains(playerTwo.selection[P2S].Name))
             {
-                Console.WriteLine(playerOne.gestureArray[P1S].Name + " beats " + playerTwo.gestureArray[P2S].Name + ".");
+                Console.WriteLine(playerOne.selection[P1S].Name + " beats " + playerTwo.selection[P2S].Name + ".");
                 Console.WriteLine(playerOne.playerName + " won the round.");
                 playerOneScore += 1;
             }
-            else if (playerTwo.gestureArray[P2S].beats.Contains(playerOne.gestureArray[P1S].Name))
+            else if (playerTwo.selection[P2S].beats.Contains(playerOne.selection[P1S].Name))
             {
-                Console.WriteLine(playerOne.gestureArray[P2S].Name + "beats " + playerTwo.gestureArray[P1S]);
+                Console.WriteLine(playerTwo.selection[P2S].Name + " beats " + playerOne.selection[P1S].Name);
                 Console.WriteLine(playerTwo.playerName + " won the round.");
                 playerTwoScore += 1;
             }
@@ -101,11 +101,11 @@ namespace RPSLS_project
         {
             if(playerOneScore == 2)
             {
-                Console.WriteLine(playerOne.playerName + "has won the game!");
+                Console.WriteLine(playerOne.playerName + " has won the game!");
             }
             else if(playerTwoScore == 2)
             {
-                Console.WriteLine(playerTwo.playerName + "has won the game!");
+                Console.WriteLine(playerTwo.playerName + " has won the game!");
             }
         }
         public void RunGame()
