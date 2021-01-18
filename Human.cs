@@ -10,19 +10,19 @@ namespace RPSLS_project
     {
         public override int GestureSelection()
         {
-            string selection = null;
-            while (selection != "1" && selection != "2" && selection != "3" && selection != "4" && selection != "5")
+            string choice = null;
+            while (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5")
             {
-                int i = 1;
+                int j = 1;
                 Console.WriteLine(playerName + " choose an object to throw (select a number):");
-                foreach (Gesture name in gestureArray)
+                for (int i = 0; i < selection.Count; i++)
                 {
-                    Console.WriteLine(i + " " + name.Name);
-                    i++;
+                    Console.WriteLine(j + " " + selection[i].Name);
+                    j++;
                 }
-                selection = Console.ReadLine();
+                choice = Console.ReadLine();
             }
-            int gestureInt = int.Parse(selection);
+            int gestureInt = int.Parse(choice);
             int P1GS = (gestureInt -= 1);
             return P1GS;
             

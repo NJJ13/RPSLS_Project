@@ -14,7 +14,6 @@ namespace RPSLS_project
         public Scissor scissors = new Scissor();
         public Lizard lizard = new Lizard();
         public Spock spock = new Spock();
-        public Gesture[] gestureArray = new Gesture[5];
         public string playerName;
 
         public Player()
@@ -31,12 +30,7 @@ namespace RPSLS_project
             selection.Add(scissors);
             selection.Add(lizard);
             selection.Add(spock);
-            gestureArray[0] = rock;
-            gestureArray[1] = paper;
-            gestureArray[2] = scissors;
-            gestureArray[3] = lizard;
-            gestureArray[4] = spock;
-
+            
         }
 
         public abstract int GestureSelection();

@@ -29,16 +29,16 @@ namespace RPSLS_project
             if (playerSelection == "0")
             {
                 playerOne = new CPU();
-                playerOne.playerName = "P1";
+                playerOne.playerName = "CPU 1";
                 playerTwo = new CPU();
-                playerTwo.playerName = "P2";
+                playerTwo.playerName = "CPU 2";
             }
             else if (playerSelection == "1")
             {
                 playerOne = new Human();
                 playerOne.playerName = "P1";
                 playerTwo = new CPU();
-                playerTwo.playerName = "P2";
+                playerTwo.playerName = "CPU";
             }
             else if (playerSelection == "2")
             {
@@ -119,6 +119,15 @@ namespace RPSLS_project
             }
 
             DisplayWinner();
+            Console.WriteLine("Would you like to play again?");
+            Console.WriteLine("Press 1 to restart, or press any other key to quit.");
+            string restart = Console.ReadLine();
+            if (restart == "1")
+            {
+                playerOneScore = 0;
+                playerTwoScore = 0;
+                RunGame();
+            }
                        
         }
     }
