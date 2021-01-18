@@ -36,16 +36,19 @@ namespace RPSLS_project
             else if (playerSelection == "1")
             {
                 playerOne = new Human();
-                playerOne.playerName = "P1";
+                Console.WriteLine("Player 1, please enter your name:");
+                playerOne.playerName = Console.ReadLine();
                 playerTwo = new CPU();
                 playerTwo.playerName = "CPU";
             }
             else if (playerSelection == "2")
             {
                 playerOne = new Human();
-                playerOne.playerName = "P1";
+                Console.WriteLine("Player 1, please enter your name:");
+                playerOne.playerName = Console.ReadLine();
                 playerTwo = new Human();
-                playerTwo.playerName = "P2";
+                Console.WriteLine("Player 2, please enter your name:");
+                playerTwo.playerName = Console.ReadLine();
             }
         }
         public void DisplayRules()
@@ -96,6 +99,7 @@ namespace RPSLS_project
             {
                 Console.WriteLine("It's a tie!");
             }
+            Console.ReadLine();
         }
         public void DisplayWinner()
         {
